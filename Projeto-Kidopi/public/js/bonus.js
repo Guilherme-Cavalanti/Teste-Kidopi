@@ -108,6 +108,8 @@ const LoadData = async () => {
     GenerateData(JSON.parse(data1), JSON.parse(data2))
     SpinnerDiv.classList.toggle("d-none")
     CountryData.classList.toggle("d-none")
+    clearCountry(1)
+    clearCountry(2)
 }
 
 const GenerateData = (data1, data2) => {
