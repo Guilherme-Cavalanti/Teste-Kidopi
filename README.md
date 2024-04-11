@@ -11,15 +11,14 @@ Ele precisa ter um database chamado **Projeto_Kidopi** e uma tabela nesse databa
 o database estão dentro da pasta **src** do projeto, em **/src/sql/create.sql**. 
 
 Não da pra rodar todos de uma vez, primeiro cria o database, depois roda o **USE Projeto_Kidopi** e 
-depois cria a tabela, tem 3 inserções teste no arquivo que servem pra saber se ta rodando ok o database, como ele ligado na porta **3306**, já está pronto para a aplicação.
+depois cria a tabela, tem 3 inserções teste no arquivo que servem pra saber se ta rodando corretamente o database. Com ele ligado na porta **3306**, já está pronto para a aplicação.
 
 ## Backend
 
 O backend precisa ser configurado conforme está no seu computador, ele está dentro da pasta **src** do projeto, é o arquivo **connect.php** as duas primeiras linhas
-do código são o que precisa ser modificado, é o *user* e a *password* que você quer usar no seu banco de dados MySQL ou MariaDB. 
+do código são o que precisa ser modificado, é o *user* e a *password* que você quer estiver usando no seu banco de dados MySQL ou MariaDB. 
 
-Basicamente só alterar os valores de **$mysql_user** para o seu usuário (está como *"root"*) e de **$mysql_password** para a sua senha (está como *"123456"*), o servidor tem que
-estar ligado na porta **3306** (padrão do MySQL) e precisa ter criado o database **Projeto_Kidopi**, se estiver tudo configurado corretamente a conexão será estabelecida com sucesso.
+Basicamente só alterar os valores de **$mysql_user** para o seu usuário (está como *"root"*) e de **$mysql_password** para a sua senha (está como *"123456"*), de onde está guardados o database criado anteriormente. O servidor tem que estar ligado na porta **3306** (padrão do MySQL) e precisa ter criado o database **Projeto_Kidopi**, se estiver tudo configurado corretamente a conexão será estabelecida com sucesso.
 
 ## Servidor
 
