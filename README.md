@@ -8,7 +8,7 @@
 O banco de dados precisa ser MySQL ou MariaDB (Ambos são compativeis com o código), ele precisa estar ligado na porta **3306** (porta padrão).
 
 Ele precisa ter um database chamado **Projeto_Kidopi** e uma tabela nesse database chamada **Acessos**, com os atributos *id*, *data*, *hora* e (pais). Os scripts para criar
-o database estão dentro da pasta **src** do projeto, em */src/sql/create.sql*. 
+o database estão dentro da pasta **src** do projeto, em **/src/sql/create.sql**. 
 
 Não da pra rodar todos de uma vez, primeiro cria o database, depois roda o **USE Projeto_Kidopi** e 
 depois cria a tabela, tem 3 inserções teste no arquivo que servem pra saber se ta rodando ok o database, como ele ligado na porta **3306**, já está pronto para a aplicação.
