@@ -20,9 +20,6 @@ const FixString = (string) => {
     let split = string.split("")
     split[42] = ""
     split[split.length-2] = ""
-    for (i of split){
-        if(i==="\\") i="cu"
-    }
     split = split.map(c => {
         if(c=="\\") c= ""
         return c;
@@ -35,33 +32,37 @@ const GenerateTable = (dataC) => {
     const {data} = dataC
     const {message} = dataC
     let keys = Object.keys(data)
-    console.log(keys)
     const TBody = []
+    let SomaConfirmados = 0
+    let SomaMortes = 0
     for(i of keys){
         TBody.push("<tr>")
+        SomaConfirmados += +data[i]["Confirmados"]
+        SomaMortes += +data[i]["Mortos"]
         TBody.push(`
         <td> ${data[i]["ProvinciaEstado"]} </td>
-        <td> ${data[i]["Pais"]} </td>
         <td> ${data[i]["Confirmados"]} </td>
         <td> ${data[i]["Mortos"]} </td>
         `)
         TBody.push("</tr>")
-
     }
     const table = `
         <p class="fw-bold">País ${data[0]["Pais"]}</p>
         <div class="table-div mb-3">
-            <table class='table table-hover table-bordered caption-top'>
+            <table class='table table-hover table-bordered'>
                 <thead>
                     <tr>
                         <th scope="col">Provincia/Estado</th>
-                        <th scope="col">Pais</th>
+                        
                         <th scope="col">Confirmados</th>
                         <th scope="col">Mortos</th>
                     </tr>
                 </thead>
                 <tbody>
                     ${TBody.join("")}
+                    <td> <b>Total </b> </td>
+                    <td> ${SomaConfirmados} </td>
+                    <td> ${SomaMortes} </td>
                 </tbody>
             </table>
         </div>
@@ -80,7 +81,6 @@ const UpdateLastAccess = async () => {
     const Response = await GetLastAccess()
     const Info = JSON.parse(Response)
     const {data} = Info
-    console.log(data)
     InfoMessage.innerHTML = Info["message"]
     InfoId.innerHTML = data["id"]
     InfoData.innerHTML = data["data"]
