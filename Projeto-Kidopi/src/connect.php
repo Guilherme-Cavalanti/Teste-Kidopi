@@ -1,6 +1,6 @@
 <?php 
-    $mysql_user = "root";
-    $mysql_password = "123456";
+    $mysql_user = "root"; // Usuário do MySQL
+    $mysql_password = "123456"; // Senha do usuário
     $country = null;
     if(isset($_GET['country'])) {
         $country = $_GET['country'];
