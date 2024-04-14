@@ -86,7 +86,7 @@
                     </div>
                 </div>
             </div>
-            <a href="index.php">Página Principal </a>
+            <a href="main.php">Página Principal </a>
         </div>
     </div>
     <script src="./js/bonus.js"> </script>

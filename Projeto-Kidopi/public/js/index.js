@@ -11,17 +11,22 @@ const LoadData = async () => {
     //CountryData.innerHTML = dataCountry
     SpinnerDiv.classList.toggle("d-none")
     CountryData.classList.toggle("d-none")
-    const ObjectData = JSON.parse(dataCountry)
-    GenerateTable(ObjectData)
+    try {
+        const ObjectData = JSON.parse(dataCountry)
+        GenerateTable(ObjectData)
+    }
+    catch (error) {
+        window.alert("Conexão com banco de dados falhou")
+    }
 }
 
 //ARRUMAR DATA Q VEM DO BACKEND
 const FixString = (string) => {
     let split = string.split("")
     split[42] = ""
-    split[split.length-2] = ""
+    split[split.length - 2] = ""
     split = split.map(c => {
-        if(c=="\\") c= ""
+        if (c == "\\") c = ""
         return c;
     })
     return split.join("")
@@ -29,13 +34,13 @@ const FixString = (string) => {
 
 //GERAR TABELA DOS DADOS DE CADA PAÍS
 const GenerateTable = (dataC) => {
-    const {data} = dataC
-    const {message} = dataC
+    const { data } = dataC
+    const { message } = dataC
     let keys = Object.keys(data)
     const TBody = []
     let SomaConfirmados = 0
     let SomaMortes = 0
-    for(i of keys){
+    for (i of keys) {
         TBody.push("<tr>")
         SomaConfirmados += +data[i]["Confirmados"]
         SomaMortes += +data[i]["Mortos"]
@@ -79,13 +84,18 @@ const InfoPais = document.getElementById("pais")
 
 const UpdateLastAccess = async () => {
     const Response = await GetLastAccess()
-    const Info = JSON.parse(Response)
-    const {data} = Info
-    InfoMessage.innerHTML = Info["message"]
-    InfoId.innerHTML = data["id"]
-    InfoData.innerHTML = data["data"]
-    InfoHora.innerHTML = data["hora"]
-    InfoPais.innerHTML = data["pais"]
+    try {
+        const Info = JSON.parse(Response)
+        const { data } = Info
+        InfoMessage.innerHTML = Info["message"]
+        InfoId.innerHTML = data["id"]
+        InfoData.innerHTML = data["data"]
+        InfoHora.innerHTML = data["hora"]
+        InfoPais.innerHTML = data["pais"]
+    }
+    catch(error){
+        InfoMessage.innerHTML = "Conexão com banco de dados falhou"
+    }
 }
 
 window.onload(UpdateLastAccess())

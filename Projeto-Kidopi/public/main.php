@@ -75,10 +75,10 @@
                    <span class="p-0">Server Response: <span class="text-primary p-0" id="last-message"> </span> </span>
                 </div>
                 <span>
-                    <b>Id: </b> <span id="id" class="me-5">123 </span>
-                    <b>Data: </b> <span id="data" class="me-5">Lopo </span>
-                    <b>Hora: </b> <span id="hora" class="me-5">Caka </span>
-                    <b>País: </b> <span id="pais">Bara </span>
+                    <b>Id: </b> <span id="id" class="me-5">Nenhum </span>
+                    <b>Data: </b> <span id="data" class="me-5">Nenhum </span>
+                    <b>Hora: </b> <span id="hora" class="me-5">Nenhum </span>
+                    <b>País: </b> <span id="pais">Nenhum </span>
             </span>
             </div>
         </div>

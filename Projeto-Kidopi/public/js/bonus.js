@@ -103,9 +103,13 @@ const LoadData = async () => {
     }
     CountryData.classList.toggle("d-none")
     SpinnerDiv.classList.toggle("d-none")
-    const data1 = await DirectAcessCountry(Country1.innerText)
-    const data2 = await DirectAcessCountry(Country2.innerText)
-    GenerateData(JSON.parse(data1), JSON.parse(data2))
+    try {
+        const data1 = await DirectAcessCountry(Country1.innerText)
+        const data2 = await DirectAcessCountry(Country2.innerText)
+        GenerateData(JSON.parse(data1), JSON.parse(data2))
+    }catch(error){
+        window.alert("Erro ao conectar com a API")
+    }
     SpinnerDiv.classList.toggle("d-none")
     CountryData.classList.toggle("d-none")
     clearCountry(1)
@@ -161,7 +165,7 @@ const GenerateData = (data1, data2) => {
                 </div>
             </div>
         </div>
-        <div class="alert alert-info text-center" role="alert"> A diferença da taxa de mortes entre ${pais1} e ${pais2} é de ${(Taxa1-Taxa2).toFixed(3)} </div>
+        <div class="alert alert-info text-center" role="alert"> A diferença da taxa de mortes entre ${pais1} e ${pais2} é de ${(Taxa1 - Taxa2).toFixed(3)} </div>
     `
     CountryData.innerHTML = output
 }
