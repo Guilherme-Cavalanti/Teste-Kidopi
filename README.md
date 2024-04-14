@@ -34,5 +34,5 @@ Dependendo da versão do PHP que estiver rodando, da pra ligar um servidor nativ
     php -S localhost:3000
 ```
 
-Isso criará um servidor na porta 3000 (se quiser mudar é só alterar o número depois dos dois pontos), dai é só acessar esse endereço em seu navegador,  vai abrir o **index.php** que vai redirecionar para o **main.php** na pasta **public**. Ou acessar nesse endreço o diretório **/public**, vai abrir o main.php normalmente, dai é só usar como quiser.
+Isso criará um servidor na porta 3000 (se quiser mudar é só alterar o número depois dos dois pontos), dai é só acessar esse endereço em seu navegador,  vai abrir o **index.php** que vai redirecionar para o **main.php** na pasta **public**. Ou acessar nesse endereço o diretório **/public**, vai abrir o **main.php** normalmente, dai é só usar como quiser.
 
