@@ -14,4 +14,4 @@ O **index.php** serve pra redirecionar para o */public/main.php* se abrir o serv
 
 ### Inicializando
 
-Se estiver tudo configurado, é só rodar o comando **php -S localhost:3000** nesse diretório e abrir a porta 3000 no localhost, ou configurar o Apache para hospedar esse diretório. Acessar o endereço,  vai abrir o **index.php** que vai redirecionar para **/public** que deve abrir a página princiapl, se não, navegue até **/public/main.php** no endereço onde o projeto ta hospedado.
+Se estiver tudo configurado, é só rodar o comando **php -S localhost:3000** nesse diretório e abrir a porta 3000 no localhost, ou configurar o Apache para hospedar esse diretório. Acessar o endereço,  vai abrir o **index.php** que vai redirecionar para **/public** que deve abrir a página principal, se não, navegue até **/public/main.php** no endereço onde o projeto ta hospedado.

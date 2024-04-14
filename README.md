@@ -10,8 +10,7 @@ O banco de dados precisa ser MySQL ou MariaDB (Ambos são compativeis com o cód
 Ele precisa ter um database chamado **Projeto_Kidopi** e uma tabela nesse database chamada **Acessos**, com os atributos *id*, *data*, *hora* e (pais). Os scripts para criar
 o database estão dentro da pasta **src** do projeto, em **/src/sql/create.sql**. 
 
-Não da pra rodar todos de uma vez, primeiro cria o database, depois roda o **USE Projeto_Kidopi** e 
-depois cria a tabela, tem 3 inserções teste no arquivo que servem pra saber se ta rodando corretamente o database. Com ele ligado na porta **3306**, já está pronto para a aplicação.
+Se for rodar no terminal é só copiar e colar, agora se for usar a interface do MySQL ou MariaDb não da pra rodar todos de uma vez, primeiro cria o database, depois roda o **USE Projeto_Kidopi** e depois cria a tabela, tem 3 inserções teste no arquivo que servem pra saber se ta rodando corretamente o database. Com ele ligado na porta **3306**, já está pronto para a aplicação.
 
 ## Backend
 
@@ -27,7 +26,7 @@ O servidor que rodará a aplicação precisa usar o diretorio raiz do projeto, q
 o arquivo raiz do seu Apache. Se estiver usando o XAMPP, localize dentro da pasta do XAMPP, o diretorio **htdocs**, esse é o diretorio raiz, só copiar e colar a pasta *Projeto-Kidopi* nele,
 inicializar o servidor e navegar até *Projeto-Kidopi*.
 
-Depois que configurar o Apache para hospedar o Projeto-Kidopi, é só abrir o endereço contendo o projeto e navegar até o diretorio **/public**, dai vai abrir o *index.php* direto.
+Depois que configurar o Apache para hospedar o Projeto-Kidopi, é só abrir o endereço contendo o projeto e navegar até o diretorio **/public**, dai vai abrir o *main.php* direto, ou se abrir na raiz vai redirecionar para o *main.php*.
 
 ### Servidor PHP
 Dependendo da versão do PHP que estiver rodando, da pra ligar um servidor nativo do php, navegue no terminal até o diretorio **Projeto-Kidopi**, e insira o comando:
@@ -35,5 +34,5 @@ Dependendo da versão do PHP que estiver rodando, da pra ligar um servidor nativ
     php -S localhost:3000
 ```
 
-Isso criará um servidor na porta 3000 (se quiser mudar é só alterar o número depois dos dois pontos), dai é só acessar nesse endereço a pasta **Public**, vai abrir o index.php normalmente.
+Isso criará um servidor na porta 3000 (se quiser mudar é só alterar o número depois dos dois pontos), dai é só acessar esse endereço em seu navegador,  vai abrir o **index.php** que vai redirecionar para o **main.php** na pasta **public**. Ou acessar nesse endreço o diretório **/public**, vai abrir o main.php normalmente, dai é só usar como quiser.
 
